@@ -1,68 +1,172 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
+  font-family: "Goudy Bookletter 1911", serif;
+  background-color: lightslategray;
   margin: 0;
+  padding: 0;
+}
+
+input {
+  margin-left: 5px;
+}
+
+h2 {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 5px;
+}
+
+#logo-image {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Header */
+
+.header {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Books */
+
+.book-preview {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding: 0;
+  width: 95%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.book-preview li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 23%;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.book-preview p {
+  margin-top: 0;
+}
+
+.book-preview img {
+  width: 250px;
+}
+
+/* SINGLE BOOK */
+
+.single-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  margin-top: 25px;
+}
+
+.info {
+  width: 35%;
+}
+.book-cover {
+  width: 55%;
+}
+
+.book-cover img {
+  height: 600px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Account */
+
+.account-info p {
+  margin: 3px;
+}
+
+.account-info,
+button,
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.account-info {
+  width: 90%;
+}
+
+form label {
+  margin: 5px;
+}
+
+/* Search */
+
+#search-results,
+.search-bar,
+.account-section,
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 90%; */
+}
+
+#search-results li,
+#search-results div,
+#search-results div ul,
+.book-section,
+.account-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* width: 90%; */
+}
+
+#search-results li {
+  width: 200px;
+}
+
+/* #search-results li a {
+  width: 200px;
+} */
+
+#search-results li a img {
+  width: 80%;
+}
+
+/* Add your own custom styles here */
+
+@media (max-width: 1250px) {
+  .book-preview li {
+    width: 33%;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media (max-width: 850px) {
+  .book-preview li {
+    width: 43%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+  .book-preview li {
+    width: 80%;
   }
 }
