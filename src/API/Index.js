@@ -1,9 +1,9 @@
-const baseUrl = "http://fsa-book-buddy-b6e748d1380d.herokuapp.com/api";
+const baseUrl = "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api";
 
 export async function getAllBooks() {
   try {
     const response = await fetch(`${baseUrl}/books`, {
-      headers: { " Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
     });
     const booksArray = await response.json();
     return booksArray.books;
@@ -23,7 +23,7 @@ export async function register(user) {
     });
     const json = await response.json();
     return json;
-  } catch (errpr) {
+  } catch (error) {
     console.log(error);
   }
 }
@@ -93,22 +93,7 @@ export async function reservationListApi(userId) {
 
 export async function returnBookApi(userId, resId) {
   try {
-    const response = await fetch(`${baseUrl}/reservations`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userId}`,
-      },
-    });
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export async function returnBookApi(userId, resId) {
-  try {
-    const response = await fetch(`${baseUrl}/reservation/${resId}`, {
+    const response = await fetch(`${baseUrl}/reservations/${resId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
